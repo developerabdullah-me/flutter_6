@@ -32,11 +32,11 @@ class HomeActivity extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
               padding: EdgeInsets.all(16),
-              child: Text("Welcome to My Galary"),
+              child: Text("Welcome to My Galary!",style: TextStyle(fontSize: 25),),
             ),
             const Padding(
               padding: EdgeInsets.all(16),
@@ -116,8 +116,8 @@ class HomeActivity extends StatelessWidget {
                       height: 50,
                       fit: BoxFit.cover,
                     ),
-                    title: Text('Photo 1'),
-                    subtitle: Text('description for Photo 1'),
+                    title: Text('Photo 2'),
+                    subtitle: Text('description for Photo 2'),
                     onTap: () {
                       // Handle image tap here
                       print('Image tapped');
@@ -130,8 +130,8 @@ class HomeActivity extends StatelessWidget {
                       height: 50,
                       fit: BoxFit.cover,
                     ),
-                    title: Text('Photo 1'),
-                    subtitle: Text('description for Photo 1'),
+                    title: Text('Photo 3'),
+                    subtitle: Text('description for Photo 3'),
                     onTap: () {
                       // Handle image tap here
                       print('Image tapped');
@@ -140,21 +140,18 @@ class HomeActivity extends StatelessWidget {
                 ],
               ),
             ),
-            IconButton(
-              onPressed: () {
-                MySnakbar("File Uploaded Success Fully ", context);
-              },
-              icon: Icon(
-                Icons.upload,
-                // color: Colors.blue,
-                size: 20,
-              ),
-              style: IconButton.styleFrom(
-                backgroundColor: Colors.red,
-              ),
-            ),
           ],
         ),
+      ),
+
+
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FloatingActionButton(onPressed: (){MySnakbar("File Uploaded Success Fully ", context);},
+            child: Icon(Icons.upload),
+          ),
+        ],
       ),
     );
   }
